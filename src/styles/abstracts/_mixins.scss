@@ -1,14 +1,73 @@
-// TODO: Clearfix, displays, etc
-@import 'mixins/focus';
-@import 'mixins/font-face';
-@import 'mixins/positioning';
-@import 'mixins/images';
-@import 'mixins/gradients';
-@import 'mixins/typography';
-@import 'mixins/breakpoints';
-@import 'mixins/spacing';
-@import 'mixins/container';
-@import 'mixins/grid';
-@import 'mixins/flex-box';
-@import 'mixins/visibility';
-@import 'mixins/floats';
+// Prints out @media query as seen below for min-width
+// @param $media should match a breakpoint size defined in variables.scss
+@mixin break-min($media) {
+  @if (type-of($media)=='number') {
+    @if (unit($media)=='px' or unit($media)=='em') {
+      @media screen and (min-width: #{$media}) {
+        @content;
+      }
+    }
+
+    @else {
+      @media screen and (min-width: #{$media}em) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @media screen and (#{$media}) {
+      @content;
+    }
+  }
+}
+
+// Prints out @media query as seen below for max-width
+// @param $media should match a breakpoint size defined in variables.scss
+@mixin break-max($media) {
+  @if (type-of($media)=='number') {
+    @if (unit($media)=='px' or unit($media)=='em') {
+
+      // -1 px
+      @media screen and (max-width: #{$media - 0.063}) {
+        @content;
+      }
+    }
+
+    @else {
+
+      // -1 px
+      @media screen and (max-width: #{$media - 0.063}em) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @media screen and (#{$media}) {
+      @content;
+    }
+  }
+}
+
+// font smoothing
+@mixin smoothing {
+  font-feature-settings: 'liga'1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Truncate lines and use ellipsis
+@mixin truncate-lines($n: 4) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* stylelint-disable value-no-vendor-prefix, property-no-unknown */
+  display: -webkit-box;
+  -webkit-line-clamp: #{$n};
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+
+  /* xstylelint-enable value-no-vendor-prefix, property-no-unknown */
+}
+
