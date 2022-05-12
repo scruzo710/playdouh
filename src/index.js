@@ -1,34 +1,34 @@
-import RouterModule from 'js/router'
-
-import drawer from './drawer/drawer'
-// Include css for webpack (for development only)
-// const css = require('../scss/main.scss') // eslint-disable-line no-unused-vars
+// import { Nav } from './js/nav'
+/**
+ * Imports css for webpack (for development only)
+ * NOTE: Checho ignore this line
+ */
 import 'styles/app.scss'
 
-// if (process.env.NODE_ENV === 'development') {
-//   require('./index.html')
-// }
-
-// Hot reloading (for development only)
+/**
+ * Hot reloading (for development only - Webpack)
+ * Note: Checho Ignore this if block
+ * 
+ */
 if (module.hot) {
   module.hot.accept()
 }
-
 class App {
   constructor(el) {
     this.body = el
+    // import modules
     this.init()
   }
 
   init() {
-    drawer.init()
-    RouterModule.init(this.body)
+    console.log('Hola Checho')
+    // run the modules
   }
 }
 
 const app = {
   init() {
-    const wrapperEl = document.querySelector('#root')
+    const wrapperEl = document.querySelector('#app')
     if (wrapperEl) {
       const app = new App(wrapperEl) // eslint-disable-line no-unused-vars
     }
@@ -36,4 +36,4 @@ const app = {
 }
 
 // load
-window.addEventListener('load', () => app.init())
+window.addEventListener('DOMContentLoaded', () => app.init())
