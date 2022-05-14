@@ -12,7 +12,11 @@
 @import 'base/utils';
 
 // Components
+@import 'components/_buttons';
 
 // Blocks
+@import 'blocks/nav';
 
 // Layout
+@import 'layout/header';
+@import 'layout/main';

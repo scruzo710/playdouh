@@ -1,22 +1,31 @@
 .title {
+  font-family: $font-primary;
+
   &--md{
-    font-size: 2rem;
+    font-size: rem(22);
   }
   &--lg{
-    font-size: 6rem;
+    font-size: rem(28);
   }
 }
 
 .text {
-  &--md{
-    font-size: 3rem;
+  font-size: rem(16);
+  font-family: $font-secondary;
+  color: $third-prpl;
+
+  &--lg {
+    font-size: rem(18);
   }
-  &--sm{
-    font-size: 0.5rem;
+  &--md {
+    font-size: rem(14);
+  }
+  &--sm {
+    font-size: rem(12);
   }
 }
 
-.label {
-
+.underline {
+  border-bottom: 1px solid $warm-white;
 }
 

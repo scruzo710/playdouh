@@ -38,3 +38,21 @@ $lg: map-get($breakpoints, lg);
 $xl: map-get($breakpoints, xl);
 $xxl: map-get($breakpoints, xxl);
 
+// Container width
+
+.container {
+  width: 100%;
+}
+
+// Row sizes
+
+.row {
+  width: inherit;
+}
+
+//Column sizes
+  
+.col {
+  width: rem(200);
+}
+

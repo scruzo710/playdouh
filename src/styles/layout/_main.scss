@@ -1,0 +1,49 @@
+.hero{
+  height: 100vh;
+
+  &__banner{
+    background-image: linear-gradient(to bottom, rgba(41, 41, 41, 0.62), rgba(65, 12, 126, 0.83)),url("/src/images/content/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: rem(130);
+    padding-right: rem(600);
+    
+  }
+  &__title{
+    color: $warm-white;
+    font-size: rem(50);
+    margin-top: rem(50);
+    margin-bottom: rem(10);
+    text-transform: uppercase;
+
+    &-underlined {
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content:"";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: rem(9);
+        height: rem(12);
+        background: rgba(135, 61, 253, 1);
+        z-index: -1;
+      }
+     
+    }
+  }
+  &__description {
+    color: $warm-white;
+    margin-bottom: rem(90);
+  }
+}
+
+.gallery {
+  
+  &__inner {
+
+  }
+
+}
